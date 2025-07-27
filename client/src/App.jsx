@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { Home, CreateRoom, JoinRoom, Quiz, Result } from './pages/import';
+
 
 const App = () => {
   return (
-    <div className="text-center p-10">
-      <h1 className="text-3xl font-bold text-purple-700">Welcome to QuizBuzz!</h1>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<CreateRoom />} />
+        <Route path="/join" element={<JoinRoom />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
