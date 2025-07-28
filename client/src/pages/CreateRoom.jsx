@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { useGame } from "../context/GameContext";
 
 const CreateRoom = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const { username, category, roomCode, setRoomCode } = useGame();
 
-  // Pull state passed from Home (or later use context)
   useEffect(() => {
     if (!username || !category) {
       navigate("/");
