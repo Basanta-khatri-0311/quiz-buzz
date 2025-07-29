@@ -8,6 +8,7 @@ export const GameProvider = ({ children }) => {
   const [roomCode, setRoomCode] = useState("");
 
   return (
+    
     <GameContext.Provider
       value={{
         username,
